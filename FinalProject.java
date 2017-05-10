@@ -12,35 +12,39 @@ import java.applet.*;
 import sun.audio.*;
 import java.awt.Toolkit;
 import java.awt.Image;	
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 public class FinalProject
 {
 	public static void main(String [] args) throws IOException
 	{
-    	String [] henlo = {"h","e","n","l","o"," ","d","o","g"};
-		String [] second = {"h","e","l","l","o"," ","y","o","u"," ","S","T","I","N","K","Y"," ","D","O","G"};
-		String [] third = {"g","o"," ","e","a","t"," ","a"," ","b","o","n","e"," ","u","g","l","y"};
-		for(int x = 0;x < henlo.length;x++)
-		{
-			out.print(henlo[x]);
-			pause(80);
-		}
-		pause(500);
-		out.println();
-		for(int x = 0;x < second.length;x++)
-		{
-			out.print(second[x]);
-			pause(80);
-		}
-		pause(500);
-		out.println();
-		for(int x = 0;x < third.length;x++)
-		{
-			out.print(third[x]);
-			pause(80);
-		}
-		out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+
-					"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+
-					"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+//    	String [] henlo = {"h","e","n","l","o"," ","d","o","g"};
+//		String [] second = {"h","e","l","l","o"," ","y","o","u"," ","S","T","I","N","K","Y"," ","D","O","G"};
+//		String [] third = {"g","o"," ","e","a","t"," ","a"," ","b","o","n","e"," ","u","g","l","y"};
+//		for(int x = 0;x < henlo.length;x++)
+//		{
+//			out.print(henlo[x]);
+//			pause(80);
+//		}
+//		pause(500);
+//		out.println();
+//		for(int x = 0;x < second.length;x++)
+//		{
+//			out.print(second[x]);
+//			pause(80);
+//		}
+//		pause(500);
+//		out.println();
+//		for(int x = 0;x < third.length;x++)
+//		{
+//			out.print(third[x]);
+//			pause(80);
+//		}
+//		out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+
+//					"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+
+//					"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
 		
 		new Windows();
     	
@@ -54,22 +58,15 @@ public class FinalProject
    		catch (Exception e) 
    		{
       		out.println(" sleep error " + e);
-   		}
-   		
-//   		Date d = new Date();
-//   		long mil = d.getTime();
-//   		long save = mil;
-//   		while(mil < save + r)
-//   		{
-//   			d = new Date();
-//   			mil = d.getTime();
-//   		}  	   
+   		} 	   
 	}
 }
 class Windows extends Frame
 {
 	private final static int SCHEIGHT=900,SCWIDTH=1070;
 	private String title = "";
+	private String name;
+	private String elective1,elective2,elective3;
 	public Windows()
 	{
 		setSize(SCWIDTH,SCHEIGHT);
@@ -81,12 +78,29 @@ class Windows extends Frame
 			}
 		});
 		this.setVisible(true);
-		JOptionPane.showMessageDialog(null,"   Welcome to the game of Life!"+
-								  "\nIn this game, you will create a character and"+
-								  "\nstart a new life in the halls of 'ol Klein High! You"+
-								  "\nwill be able to make your own choices and those"+
-								  "\nchoices will affect the outcome of your life."+
-								  "\n            Are you ready to play??");
+		
+		//***** THIS WORKS *****
+//		JOptionPane.showMessageDialog(null,"   Welcome to the game of Life!"+
+//								  "\nIn this game, you will create a character and"+
+//								  "\nstart a new life in the halls of 'ol Klein High! You"+
+//								  "\nwill be able to make your own choices and those"+
+//								  "\nchoices will affect the outcome of your life."+
+//								  "\n            Are you ready to play??");
+								  
+		//***** THIS WORKS *****
+//		name = JOptionPane.showInputDialog(null,"Enter your first name only.");
+//		elective1 = JOptionPane.showInputDialog(null,"Enter your first elective.");
+//		elective2 = JOptionPane.showInputDialog(null,"Enter your second elective.");
+//		elective3 = JOptionPane.showInputDialog(null,"Enter your third elective.");
+		
+		//***** THIS WORKS *****
+//		JPanel panel = new JPanel();
+//		JRadioButton button1 = new JRadioButton("Hello");
+//		final JRadioButton button2 = new JRadioButton("Goodbye");
+//		panel.add(button1);
+//		panel.add(button2);
+//		JOptionPane.showMessageDialog(null, panel);
+		
 	gameLoop();
 	}
 	public void gameLoop()
@@ -112,7 +126,11 @@ class Windows extends Frame
  	 	pen.drawImage(background,-200,-100,this);	                    
 		 
   	}
+  	
 }
+
+  	
+			
 
 /* AUDIO
  *
